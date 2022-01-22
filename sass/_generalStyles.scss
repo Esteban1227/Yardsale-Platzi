@@ -1,0 +1,510 @@
+//Formularios
+.container{
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    &__logo{
+        &--img{
+            
+                width: 150px;
+                margin-bottom: 50px;
+                display: none;
+        }
+    }
+    &__block{
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &--left{
+            align-items: flex-start;
+        }
+    }
+    &__text{
+        &--h1{
+            font-size: $lg;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        &--p{
+            font-size: $md;
+            margin-bottom: 30px;
+            color: $gray;
+            text-align: center;
+        }
+        &--margin{
+            margin-bottom: 50px;
+        }
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        &--label{
+            font-size: $sm;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        &--margin{
+            margin-bottom: 2px;
+        }
+        &--input{
+            background-color: $colorTextInput;
+            border: none;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 26px;
+        }
+        &--button{
+            font-size: $md;
+            color: $white;
+            background-color: $green;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+            &--button--color{
+                background-color: $white;
+                color: $green;
+                border: solid 1px $green;
+                margin-top: 50px;
+                font-size: $md;
+        }
+        &--buttonStatic{
+            font-size: $md;
+            color: $white;
+            background-color: $green;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+            &--infoUser{
+                color: $gray;
+                padding: 10px 0 40px 0;
+                font-size: $md;
+        }
+    }
+    &__subForm{
+        display: flex;
+        flex-direction: column ;
+    }
+}
+
+
+
+//Pagina Principal
+.block{
+    margin-top: 50px;
+    &__card{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 240px);
+        gap: 26px;
+        place-content: center;
+        &--product{
+            width: 100%;
+        }
+        &--img{
+            width: 240px;
+            height: 240px;
+            border-radius: 20px;
+        }
+        &--info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+        }
+        &--text{
+            display: flex;
+            flex-direction: column;
+        }
+        &--h{
+            font-weight: bold;
+            font-size: $md;
+            margin-bottom: 4px;
+        }
+        &--p{
+            color: $gray;
+            font-size: $sm;
+            margin: 0;
+        }
+    }
+}
+
+.containerProduct{
+    width: 360px;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    &__block{
+        padding: 0 15px 0 15px;
+    }
+    &__button{
+        width: 100%;
+        font-size: $md;
+        color: $white;
+        background-color: $green;
+        border: none;
+        padding: 4px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &--color{
+            width: 100%;
+            font-size: $md;
+            color: $white;
+            background-color: $green;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+    &__container{
+        background-color: $white;
+        position: absolute;
+        top: 24px;
+        left:  24px;
+        padding: 10px;
+        border-radius: 100%;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__points{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li{
+            margin: 8px 6px;
+            background-color: rgb(231, 228, 228);
+            width: 8px;
+            height: 8px;
+            margin: 8px 6px;
+            border-radius: 50%;
+            list-style-type: none;
+            cursor: pointer;
+        }
+        &--color li{
+            background-color: $gray;
+            border-radius: 50%;
+        }
+    }
+    &__icon{
+        &--bike{
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 0 0 20px 20px;
+        }
+    }
+    &__info{
+        margin: 24px 24px 0 24px;
+        &--h4{
+            font-weight: bold;
+            font-size: $md;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        &--p{
+            color: $gray;
+            font-size: $sm;
+            margin-bottom: 36px;
+        }
+    }
+}
+
+//ordenes
+.containerOrder{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__block{
+        width: 360px;
+        display: flex;
+        flex-direction: column;
+        &--h1{
+            font-size: $lg;
+            margin-bottom: 40px;
+        }
+        &--icon{
+            width: 20px;
+            padding: 20px;
+        }
+    }
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $colorTextInput;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin-bottom: 25px;
+        &--margin{
+            margin-top: 50px;
+            padding: 28px;
+        }
+        &--h4{
+            font-weight: bold;
+        }
+        &--p{
+            color: $gray;
+        }
+        &--precio p{
+            font-weight: bold;
+        }
+    }
+    &__card{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        &--img{
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+        }
+        &--p{
+            color: $gray;
+            padding-left: 25px;
+        }
+    }
+    &__subCard{
+        display: flex;
+        align-items: center;
+    }
+    &__container{
+        display: flex;
+        align-items: center;
+        margin: 0 0 20px 0 ;
+    }
+}
+
+.containerMyOrders{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__block{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        &--h1{
+            font-size: $lg;
+            margin-bottom: 40px;
+        }
+    }
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 10px;
+        padding: 10px 20px 10px 0;
+        margin-bottom: 15px;
+        &--close{
+            width: 15px;
+            cursor:pointer;
+        }
+        &--h4{
+            font-weight: bold;
+        }
+        &--p{
+            color: $gray;
+        }
+        &--p{
+            color: $gray;
+        }
+        &--precio{
+            display: flex;
+            p{
+                font-weight: bold;
+            }
+            img{
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+
+
+//Menu Desktop
+.containerMenuDesktop{
+    width: 100px;
+    height: 150px;
+    border-radius: 6px;
+    padding: 20px 20px 0 20px;
+    box-shadow: 0px 0px 6px 0px #0000001F;
+    position: absolute;
+    background-color: $white;
+    right: 60px;
+
+    &__text{
+        font-weight: bold;
+        &--color{
+            color: $green !important;
+            font-size: $sm;
+        }
+    }
+    ul li{
+        text-align: end;
+        a{
+            color: $black;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    }
+    ul li:last-child{
+        padding-top:20px ;
+        margin-top: 10px;
+        border-top: 1px solid $gray;
+    }
+}
+
+//Menu Movil
+.containerMenuMobile{
+    width: 100%;
+    height: 700px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__listOne{
+        border-bottom: 1px solid $gray;
+        ul{
+            padding: 24px 0 0 0;
+            margin: 0;
+            li{
+                margin-bottom: 30px;
+                a{
+                    color: $black;
+                    font-weight: bold;
+                    margin-bottom: 24px
+                }
+            }
+        }
+    }
+    &__listTwo{
+        ul{
+            padding: 24px 0 0 0;
+            margin: 0;
+            li{
+                margin-bottom: 30px;
+                a{
+                    color: $black;
+                    font-weight: bold;
+                    margin-bottom: 24px
+                }
+            }
+        }
+    }
+    &__listThree{
+        ul{
+            padding: 24px 0 0 0;
+            margin: 0;
+            li{
+                margin-bottom: 10px;
+                a{
+                    margin-bottom: 24px
+                }
+            }
+        }
+        &--email{
+            color: $dark;
+        }
+        &--sign-out{
+            color: $green;
+        }
+    }
+}
+
+//nav
+.containerNav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 60px;
+    box-shadow: 0px 2px 4px 0px #0000000C;
+    &__subMenu{
+        display: flex;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    &__iconMobile{
+        display: none;
+    }
+    &__logo{
+        width: 144px;
+    }
+    &__left{
+        display: flex;
+    }
+    &__right{
+        display: flex;
+        margin-right: 15px;
+    }
+    &__left ul{
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+    }
+    &__right ul{
+        display: flex;
+        align-items: center;
+    }
+    &__buttons a{
+        color: $gray;
+        border: 1px solid $white;
+        padding: 8px;
+        border-radius: 8px; 
+        &:hover{
+            color: $green;
+            border: 1px solid $green;
+        }
+    }
+    &__textEmail{
+        color: $gray;
+        font-size: $sm;
+        margin-right: 12px;
+    }
+    &__icon{
+        position: relative;
+    }
+    &__notification{
+        width: 16px;
+        height: 16px;
+        background-color: $green;
+        border-radius: 50%;
+        font-size: $sm;
+        font-weight: bold;
+        position: absolute;
+        top: -8px;
+        right: -6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__container{
+        position: relative;
+        display: flex;
+        cursor: pointer;
+    }
+}
+.close{
+    display: none;
+}
