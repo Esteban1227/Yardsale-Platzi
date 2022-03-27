@@ -1,10 +1,17 @@
 //paleta de colores//
 $white:rgb(255, 255, 255);
+$whiteHover:#f2f2f2f2;
 $black: rgb(0, 0, 0);
 $dark:rgb(35, 40, 48);
 $gray:rgb(182, 180, 180);
 $green:rgb(172, 217, 178);
+$greenHover:rgba(172, 217, 178, 0.705);
 $colorTextInput:rgb(247, 247, 247);
+$colorBgInput:rgba(255, 249, 249, 1);
+$colorTextLabelRequired:rgba(210, 80, 80, 1);
+$colrBgButton:rgba(231, 231, 231, 1);
+
+
 $sm:15px;
 $md:18px;
 $lg:20px;

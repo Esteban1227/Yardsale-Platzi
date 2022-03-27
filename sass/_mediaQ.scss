@@ -23,7 +23,11 @@
             }
         }
     }
+    .containerMenuMobile{
+        display: block;
+    }
     .block{
+        margin-top: 20px;
         &__card{
             display: grid;
             grid-template-columns: repeat(auto-fill, 140px);
@@ -31,39 +35,47 @@
                 width: 100%;
             }
             &--img{
-                width: 140px;
                 height: 140px;
-                border-radius: 20px;
             }
             &--icon{
                 width: 35px;
             }
         }
+        &__search{
+            margin: auto;
+            flex-direction: column;
+        }
+        &__category{
+            display: flex;
+        }
+    }
+    .searchContainer{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .orderContainer{
+        margin: 20px 0;
     }
     .containerMyOrders{
+        height: 350px;
         &__block{
-            &--h1{
-                display: none;
-            }
+            padding: 20px;
         }
     }
     .containerOrder{
+        height: 550px;
         &__block{
-            &--h1{
-                display: none;
-            }
+            padding: 20px;
             &--mobile{
                 width: 100%;
             }
-        }
-        &__container{
-            display: none;
         }
     }
     .containerNav{
         &__iconMobile{
             display: block;
             width: 30px;
+            margin-left: 10px;
         }
         &__left ul{
             display: none;
@@ -77,8 +89,15 @@
     }
     .containerProduct{
         width: 100%;
-        position: sticky;
-        padding: 30px;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        border-radius: 0;
+        &__icon{
+            &--bike{
+                border-radius: 0;
+            }
+        }
     }
     .close{
         display: block;
@@ -97,6 +116,27 @@
     .containerNav{
         &__left ul{
             margin-left: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 400px){
+    .block{
+        &__category{
+            width: 100%;
+            height: 50px;
+            padding: 10px;
+            white-space: nowrap;
+            overflow-y: hidden; 
+            overflow-x: auto;
+        }
+        &__scroll{
+            display: none;
+            width: 100px;
+            height: 50px;
+            margin: 0 10px 0 0;
+            padding: 0;
+            display: inline-block;
         }
     }
 }

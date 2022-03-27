@@ -48,6 +48,9 @@
             font-size: $sm;
             font-weight: bold;
             margin-bottom: 20px;
+            &--required{
+                color: $colorTextLabelRequired;
+            }
         }
         &--margin{
             margin-bottom: 2px;
@@ -58,8 +61,14 @@
             border-radius: 10px;
             padding: 14px;
             margin-bottom: 26px;
+            &--required{
+                width: 100%;
+                background-color: $colorBgInput;
+                border: solid 1px $colorTextLabelRequired;
+            }
         }
         &--button{
+            width: 100%;
             font-size: $md;
             color: $white;
             background-color: $green;
@@ -68,15 +77,30 @@
             border-radius: 10px;
             cursor: pointer;
             font-weight: bold;
+            &:hover{
+                background-color: $greenHover;
+            }
+            &--required{
+                cursor:auto;
+                background-color: $colrBgButton;
+                &:hover{
+                    background-color: $colrBgButton;
+                }
+            }
         }
             &--button--color{
                 background-color: $white;
                 color: $green;
                 border: solid 1px $green;
-                margin-top: 50px;
+                margin-top: 40px;
                 font-size: $md;
+                &:hover{
+                    background-color: $whiteHover;
+                    
+                }
         }
         &--buttonStatic{
+            width: 100%;
             font-size: $md;
             color: $white;
             background-color: $green;
@@ -85,11 +109,20 @@
             border-radius: 10px;
             cursor: pointer;
             font-weight: bold;
+            &:hover{
+                background-color: $greenHover;
+            }
         }
             &--infoUser{
                 color: $gray;
                 padding: 10px 0 40px 0;
                 font-size: $md;
+        }
+        &--pRequired{
+            font-size: $sm;
+            text-align: center;
+            margin-bottom: 26px;
+            color: $colorTextLabelRequired;
         }
     }
     &__subForm{
@@ -100,9 +133,48 @@
 
 
 
+
 //Pagina Principal
+.orderContainer{
+    p{
+        color: black;
+        font-weight: bold;
+        font-size: $sm;
+    }
+    span{
+        cursor: pointer;
+        color: $gray;
+    }
+}
+
+.searchContainer{
+    width: 300px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    background-color: $colorTextInput;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    input{
+        padding: 2px;
+        width: 100%;
+        margin-left: 4px;
+        border: none;
+        background-color: $colorTextInput;
+    }
+}
 .block{
     margin-top: 50px;
+    &__category{
+        display: none;
+    }
+    &__search{ 
+        display: flex;
+        margin-left: 8%;
+        align-items: center;
+        margin-bottom: 20px
+    }
     &__card{
         display: grid;
         grid-template-columns: repeat(auto-fill, 240px);
@@ -110,17 +182,22 @@
         place-content: center;
         &--product{
             width: 100%;
+            background-color: #F2F2F2F2;
+            box-shadow: 1px 0 1px rgba(0, 0, 0, 0.452);
+            border-radius: 20px;
         }
         &--img{
-            width: 240px;
+            width: 100%;
             height: 240px;
-            border-radius: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
         }
         &--info{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 16px;
+            margin-top: 45px;
+            padding: 10px;
         }
         &--text{
             display: flex;
@@ -142,10 +219,15 @@
 .containerProduct{
     width: 360px;
     height: 100vh;
-    position: absolute;
+    background-color: $white;
+    position: fixed;
     right: 0;
+    top: 60px;
+    box-shadow: 1px 1px 1px 1px  rgba(0, 0, 0, 0.466);
+    border-radius: 0;
     &__block{
-        padding: 0 15px 0 15px;
+        width: 430px;
+        padding: 15px
     }
     &__button{
         width: 100%;
@@ -207,7 +289,6 @@
             width: 100%;
             height: 360px;
             object-fit: cover;
-            border-radius: 0 0 20px 20px;
         }
     }
     &__info{
@@ -226,24 +307,33 @@
     }
 }
 
-//ordenes
+//ordenesn
 .containerOrder{
     width: 100%;
-    height: 100vh;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     &__block{
-        width: 360px;
+        width: 400px;
         display: flex;
         flex-direction: column;
         &--h1{
             font-size: $lg;
-            margin-bottom: 40px;
         }
         &--icon{
             width: 20px;
-            padding: 20px;
+            margin-right: 10px;
+        }
+    }
+    &__blockUp{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        img{
+            width: 20px;
+            margin-right: 20px;
         }
     }
     &__info{
@@ -296,7 +386,7 @@
 
 .containerMyOrders{
     width: 100%;
-    height: 100vh;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -345,14 +435,15 @@
 
 //Menu Desktop
 .containerMenuDesktop{
-    width: 100px;
+    width: 150px;
     height: 150px;
     border-radius: 6px;
     padding: 20px 20px 0 20px;
     box-shadow: 0px 0px 6px 0px #0000001F;
     position: absolute;
     background-color: $white;
-    right: 60px;
+    right: 56px;
+    top: 60px;
 
     &__text{
         font-weight: bold;
@@ -365,6 +456,7 @@
         text-align: end;
         a{
             color: $black;
+            font-size: 13px;
             display: inline-block;
             margin-bottom: 20px;
         }
@@ -379,13 +471,22 @@
 //Menu Movil
 .containerMenuMobile{
     width: 100%;
-    height: 700px;
-    padding: 24px;
+    height: 100vh;
+    padding: 0 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: absolute;
+    background: white;
+    top: 65px;
     &__listOne{
         border-bottom: 1px solid $gray;
+        &--iconClose{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 15px;
+        }
         ul{
             padding: 24px 0 0 0;
             margin: 0;
@@ -435,11 +536,15 @@
 
 //nav
 .containerNav{
+    background-color: white;
     display: flex;
     width: 100%;
     justify-content: space-between;
     height: 60px;
     box-shadow: 0px 2px 4px 0px #0000000C;
+    position: fixed;
+    top: 0;
+    z-index: 10;
     &__subMenu{
         display: flex;
         margin-right: 10px;
@@ -450,37 +555,56 @@
     }
     &__logo{
         width: 144px;
+        margin-left: 10px;
     }
     &__left{
         display: flex;
+        align-items: center;
+        ul{
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+        }
     }
     &__right{
         display: flex;
         margin-right: 15px;
-    }
-    &__left ul{
-        display: flex;
-        align-items: center;
-        margin-left: 50px;
-    }
-    &__right ul{
-        display: flex;
-        align-items: center;
+        ul{
+            display: flex;
+            align-items: center;
+        }
     }
     &__buttons a{
         color: $gray;
         border: 1px solid $white;
         padding: 8px;
-        border-radius: 8px; 
+        border-radius: 8px;
+        font-size: $sm;
         &:hover{
             color: $green;
             border: 1px solid $green;
         }
     }
     &__textEmail{
+        user-select: none;
         color: $gray;
         font-size: $sm;
         margin-right: 12px;
+        a{
+            color: inherit;
+            &:hover{
+                color: $green;
+            }
+        }
+        &--open{
+            user-select: none;
+            width: 10px;
+        }
+        &--close{
+            user-select: none;
+            width: 10px;
+            color: lightgray;
+        }
     }
     &__icon{
         position: relative;
@@ -505,6 +629,8 @@
         cursor: pointer;
     }
 }
+
+
 .close{
     display: none;
 }

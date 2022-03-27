@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>home1</title>
 </head>
-<body>
+<body id="body" style="overflow-y: scroll;">
+    <!-- Nav -->
     <nav class="containerNav">
-        <img src="../assets/icons/icon_menu.svg" alt="" class="containerNav__iconMobile">
+        <img src="../assets/icons/icon_menu.svg" alt="" class="containerNav__iconMobile" id="openSubMenuMobile" onclick="openSubMenuMobile()">
         <div class="containerNav__left">
             <img src="../assets/logos/logo_yard_sale.svg" alt="" class="containerNav__logo">
             <ul>
@@ -37,341 +38,558 @@
             <ul>
                 <div class="containerNav__subMenu">
                     <li class="containerNav__textEmail">email@gmail.com
-                        <img src="../assets/icons/Path.svg" alt="">
+                        <img class="containerNav__textEmail--open" src="../assets/icons/Path.svg" alt="" id="openSubMenuDeskTop" onclick="openSubMenuDeskTop()">
+                        <img class="containerNav__textEmail--close" src="../assets/icons/icons8-close.svg"  style="display: none;" id="closeSubMenuDeskTop" onclick="closeSubMenuDeskTop()" alt="">
                     </li>
                 </div>
                 <div class="containerNav__container">
                     <li class="containerNav__icon">
-                        <img src="../assets/icons/icon_shopping_cart.svg" alt="">
+                        <img src="../assets/icons/icon_shopping_cart.svg" alt="" onclick="openShoppingCar()">
                     </li>
                     <div class="containerNav__notification">2</div>
                 </div>
             </ul>
         </div>
     </nav>
-    <section class="block">
-        <div class="block__card">
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
+    <!---------------------------->
+
+    <!-- Sub Menu Plegable DeskTop-->
+    <div class="containerMenuDesktop" id="subMenuDesktop" style="display:none;">
+        <ul>
+            <li>
+                <a href="./my-orders.html" class="containerMenuDesktop__text">My orders</a>
+            </li>
+            <li>
+                <a href="./my_account.html" class="containerMenuDesktop__text">My account</a>
+            </li>
+            <li>
+                <a href="./Index.html" class="containerMenuDesktop__text--color">sign out</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Sub Menu Plegable Movil-->
+    <div class="containerMenuMobile" style="display: none;" id="subMenuMobile">
+        <div class="containerMenuMobile__container">
+            <div class="containerMenuMobile__listOne">
+                <img class="containerMenuMobile__listOne--iconClose" src="../assets/icons/icons8-close.svg" alt="" id="closeSubMenuMobile" onclick="closeSubMenuMobile()">
+                <ul>
+                    <li>
+                        <a href="">CATEGORIAS</a>
+                    </li>
+                    <li>
+                        <a href="">All</a>
+                    </li>
+                    <li>
+                        <a href="">Clothes</a>
+                    </li>
+                    <li>
+                        <a href="">Electronics</a>
+                    </li>
+                    <li>
+                        <a href="">Furnutures</a>
+                    </li>
+                    <li>
+                        <a href="">Toys</a>
+                    </li>
+                    <li>
+                        <a href="">Others</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="containerMenuMobile__listTwo">
+                <ul>
+                    <li>
+                        <a href="./my-orders.html">My orders</a>
+                    </li>
+                    <li>
+                        <a href="./my_account.html">My account</a>
+                    </li>
+                </ul>
+    
+            </div>
+        </div>
+        <div class="containerMenuMobile__listThree">
+            <ul>
+                <li>
+                    <a href="" class="containerMenuMobile__listThree--email">email@gmail.com</a>
+                </li>
+                <li>
+                    <a href="./Index.html" class="containerMenuMobile__listThree--sign-out">sign out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!---------------------------->
+
+
+    <!-- Shopping Card -->
+    <aside class="containerProduct containerProduct__block" id="shoppingCar" style="display:none;">
+        <div class="containerOrder__block containerOrder__block--mobile">
+            <div class="containerOrder__container">
+                <img src="../assets/icons/Vector.svg" alt="" class="containerOrder__block--icon" onclick="closeShoppingCar()">
+                <h2 class="containerOrder__block--h2">
+                    shopping cart
+                </h2>
+            </div>
+            <div class="containerOrder__card">
+                <div class="containerOrder__subCard">
+                    <div >
+                        <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="containerOrder__card--img">
                     </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
+                    <p class="containerOrder__card--p">
+                        Bike
+                    </p>
+                </div>
+                <div class="containerMyOrders__info--precio">
+                    <p>
+                        $560.00
+                    </p>
+                    <img src="../assets/icons/icon_close.png" alt="" class="containerMyOrders__info--close">
                 </div>
             </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
+            <div class="containerOrder__card">
+                <div class="containerOrder__subCard">
+                    <div >
+                        <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="containerOrder__card--img">
                     </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
+                    <p class="containerOrder__card--p">
+                        Bike
+                    </p>
+                </div>
+                <div class="containerMyOrders__info--precio">
+                    <p>
+                        $560.00
+                    </p>
+                    <img src="../assets/icons/icon_close.png" alt="" class="containerMyOrders__info--close">
                 </div>
             </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
+            <div class="containerOrder__card">
+                <div class="containerOrder__subCard">
+                    <div >
+                        <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="containerOrder__card--img">
                     </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
+                    <p class="containerOrder__card--p">
+                        Bike
+                    </p>
+                </div>
+                <div class="containerMyOrders__info--precio">
+                    <p>
+                        $560.00
+                    </p>
+                    <img src="../assets/icons/icon_close.png" alt="" class="containerMyOrders__info--close">
                 </div>
             </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
+            <div class="containerOrder__card">
+                <div class="containerOrder__subCard">
+                    <div >
+                        <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="containerOrder__card--img">
                     </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
+                    <p class="containerOrder__card--p">
+                        Bike
+                    </p>
+                </div>
+                <div class="containerMyOrders__info--precio">
+                    <p>
+                        $560.00
+                    </p>
+                    <img src="../assets/icons/icon_close.png" alt="" class="containerMyOrders__info--close">
                 </div>
             </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
+            <div class="containerOrder__info containerOrder__info--margin" >
+                <div class="containerOrder__info--fecha">
+                    <h4 class="containerOrder__info--h4">
+                        Total
+                    </h4>
                 </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
-                </div>
-            </div>
-            <div class="block__card--product">
-                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
-                <div class="block__card--info">
-                    <div class="block__card--text">
-                        <h3 class="block__card--h">
-                            $120,00
-                        </h3>
-                        <p class="block__card--p">
-                            Objeto
-                        </p>
-                    </div>
-                    <div class="block__card--containerIcon">
-                        <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
-                    </div>
+                <div class="containerOrder__info--precio">
+                    <p>
+                        $560.00
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+        <button class="containerProduct__button--color">
+            Checkout
+        </button>
+    </aside>
+
+
+
+    <!--Main-->
+    <main>
+        <section class="block"> 
+            <section class="block__search">
+                <div class="searchContainer">
+                    <img src="../assets/icons/Shape.svg" alt="">
+                    <input type="text" placeholder="Search product">
+                </div>
+                <div class="block__category">
+                    <div class="block__scroll containerNav__buttons"><a href="">All</a></div>
+                    <div class="block__scroll containerNav__buttons"><a href="">Clothes</a></div>
+                    <div class="block__scroll containerNav__buttons"><a href="">Electronics</a></div>
+                    <div class="block__scroll containerNav__buttons"><a href="">Furnutures</a></div>
+                    <div class="block__scroll containerNav__buttons"><a href="">Toys</a></div>
+                    <div class="block__scroll containerNav__buttons"><a href="">Others</a></div>
+                </div>
+                <div class="orderContainer">
+                    <p>Order:
+                        <span>Most recent <img src="../assets/icons/Path.svg" alt=""></span>
+                    </p>
+                </div>
+            </section>
+            <aside class="containerProduct" id="preview" style="display: none;">
+                <div class="containerProduct__container" id="previewClose" onclick="closePreview()">
+                    <img src="../assets/icons/icon_close.png" alt="" class="containerProduct__icon--close" id="previewClose">
+                </div>
+                <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="containerProduct__icon--bike">
+                <div class="containerProduct__points">
+                    <div class="containerProduct__points--color">
+                        <li></li>
+                    </div>
+                    <li></li>
+                    <li></li>
+                </div>
+                <div class="containerProduct__info">
+                    <h3 class="containerProduct__info--h4">$35,00</h3>
+                    <p class="containerProduct__info--p">Bike</p>
+                    <p class="containerProduct__info--p">With its functional and practical design, this bike also fulfills a decorative function, adding
+                        personality and a retro-vintage aesthetic to your house</p>
+                    <button class="containerProduct__button">
+                        <img src="../assets/icons/bt_add_to_cart.svg" alt="" class="containerProduct__icon--cart">
+                        Add to cart
+                    </button>
+                </div>
+            </aside>
+            <div class="block__card">
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img" onclick="openPreview()" id="previewOpen">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon" id="preview" onclick="openPreview()">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+                <div class="block__card--product">
+                    <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="block__card--img">
+                    <div class="block__card--info">
+                        <div class="block__card--text">
+                            <h3 class="block__card--h">
+                                $120,00
+                            </h3>
+                            <p class="block__card--p">
+                                Objeto
+                            </p>
+                        </div>
+                        <div class="block__card--containerIcon">
+                            <img src="../assets/icons/bt_add_to_cart.svg" alt="carro de compra" class="block__card--icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!---------------------------->
+    <script src="../js/menuDeskTop.js"></script>
+    <script src="../js/menuMobile.js"></script>
+    <script src="../js/shoppingCart.js"></script>
+    <script src="../js/preview.js"></script>
 </body>
 </html>

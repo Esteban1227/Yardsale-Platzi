@@ -7,12 +7,229 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>My orden</title>
 </head>
-<body>
+<body id="body" style="overflow-y: scroll;">
+    <!-- Nav -->
+    <nav class="containerNav">
+        <img src="../assets/icons/icon_menu.svg" alt="" class="containerNav__iconMobile" id="openSubMenuMobile" onclick="openSubMenuMobile()">
+        <div class="containerNav__left">
+            <a href="./home.html">
+                <img src="../assets/logos/logo_yard_sale.svg" alt="" class="containerNav__logo">
+            </a>
+            <ul>
+                <li class="containerNav__buttons">
+                    <a href="">All</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Clothes</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Electronics</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Furnutures</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Toys</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Others</a>
+                </li>
+            </ul>
+        </div>
+        <div class="containerNav__right">
+            <ul>
+                <div class="containerNav__subMenu">
+                    <li class="containerNav__textEmail">email@gmail.com
+                        <img class="containerNav__textEmail--open" src="../assets/icons/Path.svg" alt="" id="openSubMenuDeskTop" onclick="openSubMenuDeskTop()">
+                        <img class="containerNav__textEmail--close" src="../assets/icons/icons8-close.svg"  style="display: none;" id="closeSubMenuDeskTop" onclick="closeSubMenuDeskTop()" alt="">
+                    </li>
+                </div>
+                <div class="containerNav__container">
+                    <li class="containerNav__icon">
+                        <img src="../assets/icons/icon_shopping_cart.svg" alt="" onclick="openShoppingCar()">
+                    </li>
+                    <div class="containerNav__notification">2</div>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <!---------------------------->
+
+    <!-- Sub Menu Plegable DeskTop-->
+    <div class="containerMenuDesktop" id="subMenuDesktop" style="display:none;">
+        <ul>
+            <li>
+                <a href="./my-orders.html" class="containerMenuDesktop__text">My orders</a>
+            </li>
+            <li>
+                <a href="" class="containerMenuDesktop__text">My account</a>
+            </li>
+            <li>
+                <a href="" class="containerMenuDesktop__text--color">sign out</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Sub Menu Plegable Movil-->
+    <div class="containerMenuMobile" style="display: none;" id="subMenuMobile">
+        <div class="containerMenuMobile__container">
+            <div class="containerMenuMobile__listOne">
+                <img class="containerMenuMobile__listOne--iconClose" src="../assets/icons/icons8-close.svg" alt="" id="closeSubMenuMobile" onclick="closeSubMenuMobile()">
+                <ul>
+                    <li>
+                        <a href="">CATEGORIAS</a>
+                    </li>
+                    <li>
+                        <a href="">All</a>
+                    </li>
+                    <li>
+                        <a href="">Clothes</a>
+                    </li>
+                    <li>
+                        <a href="">Electronics</a>
+                    </li>
+                    <li>
+                        <a href="">Furnutures</a>
+                    </li>
+                    <li>
+                        <a href="">Toys</a>
+                    </li>
+                    <li>
+                        <a href="">Others</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="containerMenuMobile__listTwo">
+                <ul>
+                    <li>
+                        <a href="">My orders</a>
+                    </li>
+                    <li>
+                        <a href="">My account</a>
+                    </li>
+                </ul>
+    
+            </div>
+        </div>
+        <div class="containerMenuMobile__listThree">
+            <ul>
+                <li>
+                    <a href="" class="containerMenuMobile__listThree--email">email@gmail.com</a>
+                </li>
+                <li>
+                    <a href="" class="containerMenuMobile__listThree--sign-out">sign out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!---------------------------->
+
+
+    <!-- Shopping Card -->
+    <aside class="containerProduct containerProduct__block" id="shoppingCar" style="display:none;">
+        <div class="containerOrder__block containerOrder__block--mobile">
+            <div class="containerOrder__container">
+                <img src="../assets/icons/Vector.svg" alt="" class="containerOrder__block--icon" onclick="closeShoppingCar()">
+                <h2 class="containerOrder__block--h2">
+                    shopping cart
+                </h2>
+            </div>
+            <div class="containerOrder__card">
+                <div class="containerOrder__subCard">
+                    <div >
+                        <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="containerOrder__card--img">
+                    </div>
+                    <p class="containerOrder__card--p">
+                        Bike
+                    </p>
+                </div>
+                <div class="containerMyOrders__info--precio">
+                    <p>
+                        $560.00
+                    </p>
+                    <img src="../assets/icons/icon_close.png" alt="" class="containerMyOrders__info--close">
+                </div>
+            </div>
+            <div class="containerOrder__card">
+                <div class="containerOrder__subCard">
+                    <div >
+                        <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="containerOrder__card--img">
+                    </div>
+                    <p class="containerOrder__card--p">
+                        Bike
+                    </p>
+                </div>
+                <div class="containerMyOrders__info--precio">
+                    <p>
+                        $560.00
+                    </p>
+                    <img src="../assets/icons/icon_close.png" alt="" class="containerMyOrders__info--close">
+                </div>
+            </div>
+            <div class="containerOrder__card">
+                <div class="containerOrder__subCard">
+                    <div >
+                        <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="containerOrder__card--img">
+                    </div>
+                    <p class="containerOrder__card--p">
+                        Bike
+                    </p>
+                </div>
+                <div class="containerMyOrders__info--precio">
+                    <p>
+                        $560.00
+                    </p>
+                    <img src="../assets/icons/icon_close.png" alt="" class="containerMyOrders__info--close">
+                </div>
+            </div>
+            <div class="containerOrder__card">
+                <div class="containerOrder__subCard">
+                    <div >
+                        <img src="../assets/img/pexels-photo-276517.jpeg" alt="" class="containerOrder__card--img">
+                    </div>
+                    <p class="containerOrder__card--p">
+                        Bike
+                    </p>
+                </div>
+                <div class="containerMyOrders__info--precio">
+                    <p>
+                        $560.00
+                    </p>
+                    <img src="../assets/icons/icon_close.png" alt="" class="containerMyOrders__info--close">
+                </div>
+            </div>
+            <div class="containerOrder__info containerOrder__info--margin" >
+                <div class="containerOrder__info--fecha">
+                    <h4 class="containerOrder__info--h4">
+                        Total
+                    </h4>
+                </div>
+                <div class="containerOrder__info--precio">
+                    <p>
+                        $560.00
+                    </p>
+                </div>
+            </div>
+        </div>
+        <button class="containerProduct__button--color">
+            Add to cart
+        </button>
+    </aside>
+    <!---------------------------->
+
+
+
     <div class="containerOrder">
         <div class="containerOrder__block">
-            <h1 class="containerOrder__block--h1">
-                My order
-            </h1>
+            <div class="containerOrder__blockUp">
+                <a href="my-orders.html">
+                    <img src="../assets/icons/Vector.svg" alt="">
+                </a>
+                <h1 class="containerOrder__block--h1">
+                    My order
+                </h1>
+            </div>
             <div class="containerOrder__info">
                 <div class="containerOrder__info--fecha">
                     <h4 class="containerOrder__info--h4">
@@ -83,5 +300,9 @@
             
         </div>
     </div>
+    <script src="../js/menuDeskTop.js"></script>
+    <script src="../js/menuMobile.js"></script>
+    <script src="../js/shoppingCart.js"></script>
+    <script src="../js/preview.js"></script>
 </body>
 </html>

@@ -8,26 +8,71 @@
     <title>LoginError1</title>
 </head>
 <body>
+    <nav class="containerNav containerNav__none">
+        <img src="../assets/icons/icon_menu.svg" alt="" class="containerNav__iconMobile">
+        <div class="containerNav__left">
+            <img src="../assets/logos/logo_yard_sale.svg" alt="" class="containerNav__logo">
+            <ul>
+                <li class="containerNav__buttons">
+                    <a href="">All</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Clothes</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Electronics</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Furnutures</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Toys</a>
+                </li>
+                <li class="containerNav__buttons">
+                    <a href="">Others</a>
+                </li>
+            </ul>
+        </div>
+        <div class="containerNav__right">
+            <ul>
+                <div class="containerNav__subMenu">
+                    <li class="containerNav__textEmail"><a href="./login.html">Sign in</a> 
+                    </li>
+                </div>
+                <div class="containerNav__container">
+                    <li class="containerNav__icon">
+                        <img src="../assets/icons/icon_shopping_cart.svg" alt="">
+                    </li>
+                    <div class="containerNav__notification"></div>
+                </div>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
         <div class="container__logo">
             <img class="container__logo--img" src="../assets/logos/logo_yard_sale.svg" alt="logo">
         </div>
         <div class="container__block">
             <form action="" class="container__form">
-                <label for="emailUser" class="container__form--label">
+                <label for="emailUser" class="container__form--label container__form--label--required">
                     Email address
                 </label>
-                <input type="email" id="emailUser" placeholder="Email@gmail.com" class="container__form--input">
+                <input type="email" id="emailUser" placeholder="Email@gmail.com" class="container__form--input container__form--input--required">
 
-                <label for="passwordUemailUser" class="container__form--label">
+                <label for="passwordUemailUser" class="container__form--label container__form--label--required">
                     Password
                 </label>
-                <input type="password" id="passwordUemailUser" placeholder="**********" class="container__form--input">
+                <div class="container__form--required">
+                    <input type="password" id="passwordUemailUser" placeholder="**********" class="container__form--input container__form--input--required">
+                    <p class="container__form--pRequired">Invalid user ID and password combination </p>
+                </div>
 
-                <input type="submit" id="" value="Log in" class="container__form--button">
+                <a href="./logi_error2.html">
+                    <input type="button" id="" value="Log in" class="container__form--button container__form--button--required">
+                </a>
 
                 <p class="container__form--p">
-                    <a href="" class="container__form--a">
+                    <a href="./password__recovery1.html" class="container__form--a">
                         Forgot my password
                     </a>
                 </p>
